@@ -10,31 +10,31 @@ def cria_bingo_aleatorio(lin,col):
                 while n in sorteados:
                     n = randint(1,10)
                 linha.append(n)
-            sorteados.append(linha)
+                sorteados.append(n)
             if j == 2:
                 n = randint(11,20)
                 while n in sorteados:
                     n = randint(11,20)
                 linha.append(n)
-            sorteados.append(linha)
+                sorteados.append(n)
             if j == 3:
                 n = randint(21,30)
                 while n in sorteados:
                     n = randint(21,30)
                 linha.append(n)
-            sorteados.append(linha)
+                sorteados.append(n)
             if j == 4:
                 n = randint(31,40)
                 while n in sorteados:
                     n = randint(31,40)
                 linha.append(n)
-            sorteados.append(linha)
+                sorteados.append(n)
             if j == 5:
                 n = randint(41,50)
                 while n in sorteados:
                     n = randint(41,50)
                 linha.append(n)
-            sorteados.append(linha)
+                sorteados.append(n)
         matriz.append(linha)
     return matriz
 
