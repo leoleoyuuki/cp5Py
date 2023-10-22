@@ -93,3 +93,8 @@ def verifica_vitorias(cartela):
     for linha in cartela:
         if all(linha):
             return True
+
+def salva_ranking(ranking):
+    with open("ranking.txt", "w") as arquivo:
+        for jogador, vitorias in ranking.items():
+            arquivo.write(f"{jogador} {vitorias}\n")
