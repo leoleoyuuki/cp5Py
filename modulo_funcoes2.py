@@ -68,22 +68,28 @@ def solicita_nomes(nm_jogadores):
     return nomes_jogadores
 
 nm_jogadores = inicio_de_jogo()
-
 nomes_jogadores = solicita_nomes(nm_jogadores)
+jogador = nomes_jogadores = solicita_nomes(nm_jogadores)
 
 print("Nomes dos jogadores:")
 for i, nome in enumerate(nomes_jogadores):
     print(f'Jogador {i + 1} - {nome}')
 
 def sorteia_numero(sorteio_bingo):
-    nb = randint(1, 50)
-    while nb in sorteio_bingo:
-        nb = randint(1, 50)
-    sorteio_bingo.append(nb)
-    return sorteio_bingo
+    sorteio_bingo = set()
+    while len(sorteio_bingo) < 50:
+        input("Pressione Enter para sortear um número...")
+        sorteia_bingo = randint(1, 50)
+        while sorteio_bingo in sorteio_bingo:
+            sorteia_bingo = randint(1, 50)
+        sorteio_bingo.add(sorteia_bingo)
+        print(f"Número sorteado: {sorteia_bingo}")
 
-sorteio_bingo = [] 
-sorteio_bingo = sorteia_numero(sorteio_bingo)
-print(sorteio_bingo)
+sorteio_bingo = set()
+sorteia_numero(sorteio_bingo)
 
-
+def verifica_vitorias(cartela):
+    #linha horizontal
+    for linha in cartela:
+        if all(linha):
+            return True
