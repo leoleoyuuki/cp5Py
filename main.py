@@ -157,6 +157,6 @@ def main():
             for item in vitorias:
                 arquivo.write(f'{item} {vitorias[item]}\n')
         resposta = int(input('Deseja jogar novamente? Digite 1 para sim e 0 para não: '))
-            
+    print(f'FIM DE PROGRAMA - Ranking: {vitorias} ')
 
 main()
