@@ -1,6 +1,14 @@
 from random import randint
 
-def inicio_de_jogo():
+def inicio_de_jogo() -> int:
+
+    """
+        Inicia o jogo de Bingo, solicitando o número de jogadores de 1 a 5 e validando a entrada.
+
+        Returns:
+            int: O número de jogadores selecionado (entre 1 e 5).
+    """
+
     print('Bem-vindo ao Bingo!')
     while True:
         try:
@@ -13,7 +21,18 @@ def inicio_de_jogo():
             print('Entrada inválida')
 
 
-def cria_bingo_aleatorio(lin,col):
+def cria_bingo_aleatorio(lin: int, col: int) -> list:
+    """
+    Cria uma matriz para representar uma cartela de Bingo, preenchendo-a com números aleatórios sem repetição.
+
+    Args:
+        lin (int): O número de linhas da cartela.
+        col (int): O número de colunas da cartela.
+
+    Returns:
+        list: Uma matriz representando a cartela de Bingo preenchida com números aleatórios.
+    """
+
     matriz = []
     sorteados = []
     for i in range(lin):
@@ -52,7 +71,16 @@ def cria_bingo_aleatorio(lin,col):
         matriz.append(linha)
     return matriz
 
-def sorteia_numero(lista:list):
+def sorteia_numero(lista: list) -> list:
+    """
+    Sorteia um número aleatório no intervalo de 1 a 50 que ainda não foi sorteado.
+
+    Args:
+        lista (list): Uma lista de números já sorteados.
+
+    Returns:
+        list: A lista de números atualizada após o novo sorteio.
+    """
     input("Pressione ENTER para sortear...")
     verifica = lista
     n_sort = 0
@@ -65,7 +93,15 @@ def sorteia_numero(lista:list):
     
 
 def exibe_matriz(matriz: list) -> None:
-    '''Exibe a matriz'''
+    """
+    Exibe a matriz no console.
+
+    Args:
+        matriz (list): A matriz a ser exibida.
+
+    Returns:
+        None
+    """
     print()
     print()
     for i in range(len(matriz)):
@@ -75,7 +111,16 @@ def exibe_matriz(matriz: list) -> None:
     print()
     
 
-def solicita_nomes(num_jogadores):
+def solicita_nomes(num_jogadores: int) -> list:
+    """
+    Solicita o nome dos jogadores e retorna uma lista com os nomes.
+
+    Args:
+        num_jogadores (int): O número de jogadores.
+
+    Returns:
+        list: Uma lista contendo os nomes dos jogadores.
+    """
     nomes_jogadores = []
     for i in range(num_jogadores):
         nome = input(f'Nome do {i + 1}º jogador: ')
@@ -86,7 +131,14 @@ def solicita_nomes(num_jogadores):
 
 
 
-def main():
+def main() -> None:
+    """
+    Função principal que controla o jogo de Bingo, incluindo a criação das cartelas, sorteio de números e
+    determinação do vencedor.
+
+    Returns:
+        None
+    """
     resposta = 1
     vitorias = {}
     while resposta != 0:    
