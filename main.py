@@ -1,3 +1,7 @@
+# Leonardo Yuuki Nakazone - Rm550373
+# Daniel Soares Delfin - Rm 552184
+
+
 from random import randint
 
 def inicio_de_jogo() -> int:
